@@ -28,7 +28,7 @@ class Routeur
   	//Génère le contrôleur approprié en fonction de la requête reçue
 	private function creerControleur(Requete $requete)
 	{
-    	$controleur = "Vehicules";  //Contrôleur par défaut
+    	$controleur = "Home";  //Contrôleur par défaut
 		if ($requete->existeParametre('controleur'))
 		{
       		$controleur = $requete->getParametre('controleur');

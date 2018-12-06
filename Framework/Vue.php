@@ -31,7 +31,23 @@ class Vue
 		//Nécessaire pour les URI de type controleur/action/id
 		$racineWeb = Configuration::get("racineWeb", "/");
 		//Génération du gabarit commun utilisant la partie spécifique
-		$vue = $this->genererFichier('Vue/gabarit.php',array('titre' => $this->titre, 'banniere' => $this->banniere, 'contenu' => $contenu,'racineWeb' => $racineWeb));
+		if (strstr($this->fichier,'Vue/Home/'))
+		{
+			$vue = $this->genererFichier('Vue/gabaritHome.php',array('titre' => $this->titre, 'contenu' => $contenu, 'racineWeb' => $racineWeb));
+		}
+		elseif (strstr($this->fichier,'Vue/Admin/'))
+		{
+			$vue = $this->genererFichier('Vue/gabaritAdmin.php',array('titre' => $this->titre, 'contenu' => $contenu, 'racineWeb' => $racineWeb));
+		}
+		elseif (strstr($this->fichier,'Vue/Technicien/'))
+		{
+			$vue = $this->genererFichier('Vue/gabaritTechnicien.php',array('titre' => $this->titre, 'contenu' => $contenu, 'racineWeb' => $racineWeb));
+		}
+		else
+		{
+			$vue = $this->genererFichier('Vue/gabarit.php',array('titre' => $this->titre, 'banniere' => $this->banniere, 'contenu' => $contenu,'racineWeb' => $racineWeb));
+		}
+
 		//Renvoi de la vue générée au navigateur
 		echo $vue;
 	}
