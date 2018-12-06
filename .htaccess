@@ -1,0 +1,17 @@
+#Transforme l'URL de type xxx/yyy/zzz
+#en index.php?controleur=xxx&action=yyy&id=zzz
+
+#Démarre la redirection d'URL
+RewriteEngine on
+
+#Cas URL /xxx
+#Exemple localhost/MVC2018FrameworkSecu/connexion
+RewriteRule ^([a-zA-Z]*)$ index.php?controleur=$1 [L]
+
+#Cas URL /xxx/yyy
+#Exemple localhost/MVC2018FrameworkSecu/connexion/connecter
+RewriteRule ^([a-zA-Z]*)/(.*)/(.*)$ index.php?controleur=$1&action=$2&id=$3 [L]
+
+#Cas URL /xxx/yyy/zzz
+#Exemple localhost/MVC2018FrameworkSecu/vehicules/vehicule/DW-456-TR
+RewriteRule ^([a-zA-Z]*)/([a-zA-Z]*)$ index.php?controleur=$1&action=$2 [L]
