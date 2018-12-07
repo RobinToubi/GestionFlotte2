@@ -6,7 +6,7 @@ class ControleurHome extends Controleur
 {
     public function index()
     {
-      $this->genererVue(array('home' => $this->action));
+      $this->genererVue(array());
     }
 }
 
