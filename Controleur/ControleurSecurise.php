@@ -15,7 +15,7 @@ abstract class ControleurSecurise extends Controleur
         }
         else
         {
-            $this->rediriger("connexion");
+            $this->rediriger("Connexion/index.php");
         }
     }
 }
