@@ -9,15 +9,14 @@
 	<div class="row">
 		<div class="col-md-4 login-sec">
 		    <h2 class="text-center">Login Now</h2>
-		    <form class="login-form">
+		    <form action="connexion/connecter" method='post'>
   <div class="form-group">
     <label for="exampleInputEmail1" class="text-uppercase">Mail</label>
-    <input type="text" class="form-control" placeholder="">
-
+    <input type="email" class="form-control" placeholder="" name='login'>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1" class="text-uppercase">Password</label>
-    <input type="password" class="form-control" placeholder="">
+    <input type="password" class="form-control" placeholder="" name='mdp'>
   </div>
 
 

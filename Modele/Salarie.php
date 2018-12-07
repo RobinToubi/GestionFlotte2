@@ -7,7 +7,7 @@ class Salarie extends Modele
     //Retourne vrai ou faux si le salarié existe dans la base de données
     public function connecter($login, $mdp)
     {
-        $sql = "select id from salarie where login=? and mdp=?";
+        $sql = "select id from salarie where Smail=? and mdp=?";
         $salarie = $this->executerRequete($sql, array($login, $mdp));
         return ($salarie->rowCount() == 1);
     }
@@ -15,7 +15,7 @@ class Salarie extends Modele
     //Retourne un salarié de la base
     public function getSalarie($login, $mdp)
     {
-        $sql = "select id, login, mdp from salarie where login=? and mdp=?";
+        $sql = "select id, Smail, login, mdp from salarie where Smail=? and mdp=?";
         $salarie = $this->executerRequete($sql, array($login, $mdp));
         if ($salarie->rowCount() == 1)
             return $salarie->fetch();  //Première ligne du résultat
