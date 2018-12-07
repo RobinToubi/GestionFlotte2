@@ -11,6 +11,7 @@
     <div>
       <a class='add' href="index.php?action=getAllSalaries">Voir tous les Salarie</a>
       <a class='add' href="index.php?action=getAllEntretiens">Voir tous les Entretiens</a>
+      <a id="lienDeco" href="/GestionFlotte2/connexion/deconnecter">Se déconnecter</a>
     </div>
     <?=$contenu ?>
   </body>

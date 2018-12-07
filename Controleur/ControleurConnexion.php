@@ -34,12 +34,13 @@ class ControleurConnexion extends Controleur
                 $this->genererVue(array('msgErreur' => 'Login ou mot de passe incorrects'),"index");
         }
         else
+            //$this->genererVue(array('msgErreur' => 'Login et mot de passe non défini'),'index');
             throw new Exception("Action impossible : login ou mot de passe non défini");
     }
 
     public function deconnecter()
     {
         $this->requete->getSession()->detruire();
-        $this->rediriger("vehicules");
+        $this->rediriger("");
     }
 }
