@@ -19,23 +19,23 @@ class ControleurConnexion extends Controleur
 
     public function connecter()
     {
-        if ($this->requete->existeParametre("login") && $this->requete->existeParametre("mdp"))
+        if ($this->requete->existeParametre("mail") && $this->requete->existeParametre("mdp"))
         {
-            $login = $this->requete->getParametre("login");
+            $mail = $this->requete->getParametre("mail");
             $mdp = $this->requete->getParametre("mdp");
-            if ($this->salarie->connecter($login, $mdp))
+            if ($this->salarie->connecter($mail, $mdp))
             {
-                $salarie = $this->salarie->getSalarie($login, $mdp);
+                $salarie = $this->salarie->getSalarie($mail, $mdp);
                 $this->requete->getSession()->setAttribut("idSalarie",$salarie['id']);
-                $this->requete->getSession()->setAttribut("login",$salarie['login']);
+                $this->requete->getSession()->setAttribut("mail",$salarie['mail']);
                 $this->rediriger("admin");
             }
             else
-                $this->genererVue(array('msgErreur' => 'Login ou mot de passe incorrects'),"index");
+                $this->genererVue(array('msgErreur' => 'mail ou mot de passe incorrects'),"index");
         }
         else
-            //$this->genererVue(array('msgErreur' => 'Login et mot de passe non défini'),'index');
-            throw new Exception("Action impossible : login ou mot de passe non défini");
+            //$this->genererVue(array('msgErreur' => 'mail et mot de passe non défini'),'index');
+            throw new Exception("Action impossible : mail ou mot de passe non défini");
     }
 
     public function deconnecter()
