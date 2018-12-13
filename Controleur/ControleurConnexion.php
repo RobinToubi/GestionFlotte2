@@ -31,11 +31,11 @@ class ControleurConnexion extends Controleur
                 $this->rediriger("admin");
             }
             else
-                $this->genererVue(array('msgErreur' => 'Login ou mot de passe incorrects'),"index");
+                $this->genererVue(array('msgErreur' => 'mail ou mot de passe incorrects'),"index");
         }
         else
-            //$this->genererVue(array('msgErreur' => 'Login et mot de passe non défini'),'index');
-            throw new Exception("Action impossible : login ou mot de passe non défini");
+            //$this->genererVue(array('msgErreur' => 'mail et mot de passe non défini'),'index');
+            throw new Exception("Action impossible : mail ou mot de passe non défini");
     }
 
     public function deconnecter()

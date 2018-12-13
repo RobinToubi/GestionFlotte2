@@ -58,6 +58,8 @@ abstract class Controleur
         {
           header("Location:" . $racineWeb);
         }
+        elseif ($action == null)
+          header("Location:" . $racineWeb . $controleur);
         else
           header("Location:" . $racineWeb . $controleur . "/" . $action);
     }
