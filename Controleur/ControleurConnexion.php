@@ -19,9 +19,9 @@ class ControleurConnexion extends Controleur
 
     public function connecter()
     {
-        
+
         if ($this->requete->existeParametre("login") && $this->requete->existeParametre("mdp"))
-        { 
+        {
             $login = $this->requete->getParametre("login");
             $mdp = $this->requete->getParametre("mdp");
             if ($this->salarie->connecter($login, $mdp))
@@ -32,17 +32,10 @@ class ControleurConnexion extends Controleur
                 $this->rediriger("admin");
             }
             else
-<<<<<<< HEAD
-                $this->genererVue(array('msgErreur' => 'mail ou mot de passe incorrects'),"index");
-        }
-        else
-            $this->genererVue(array('msgErreur' => 'mail et mot de passe non défini'),'index');
-=======
-                $this->genererVue(array('msgErreur' => 'Login ou mot de passe incorrects'),"index"); 
+                $this->genererVue(array('msgErreur' => 'Login ou mot de passe incorrects'),"index");
         }
             //$this->genererVue(array('msgErreur' => 'Login et mot de passe non défini'),'index');
-            throw new Exception("Action impossible : login ou mot de passe non défini"); 
->>>>>>> 3c8578e757ea137903bc3365b2d8c581e48d9d9a
+            throw new Exception("Action impossible : login ou mot de passe non défini");
     }
 
     public function deconnecter()
