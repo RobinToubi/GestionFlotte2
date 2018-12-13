@@ -26,8 +26,8 @@ class ControleurConnexion extends Controleur
             if ($this->salarie->connecter($login, $mdp))
             {
                 $salarie = $this->salarie->getSalarie($login, $mdp);
-                $this->requete->getSession()->setAttribut("idSalarie",$salarie['id']);
-                $this->requete->getSession()->setAttribut("login",$salarie['login']);
+                $this->requete->getSession()->setAttribut("idSalarie",$salarie['Sid']);
+                $this->requete->getSession()->setAttribut("login",$salarie['Smail']);
                 $this->rediriger("admin");
             }
             else
