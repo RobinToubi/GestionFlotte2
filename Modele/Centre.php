@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Modele/Modele.php';
+require_once 'Framework/Modele.php';
 
 class Centre extends Modele {
 
@@ -13,10 +13,10 @@ class Centre extends Modele {
 		return $centre;
 	}
 
-	public function ajouterCentre($Cagrement, $RaisonSociale, $Add, $CodePostal, $Ville, $Tel, $Gaz, $idEnseigne){
+	public function ajouterCentre($Cagrement, $RaisonSociale, $Add, $CodePostal, $Ville, $Tel){
 		$this->executerRequete('INSERT INTO centre SET Cagrement = ?, CraisonSociale = ?, Cadresse = ?, CcodePostal = ?, Cville = ?, Ctelephone = ?', array($Cagrement, $RaisonSociale, $Add, $CodePostal, $Ville, $Tel));
 	}
-	public function modifierCentre($idCentre, $RaisonSociale, $Add, $CodePostal, $Ville, $Tel, $Gaz, $idEnseigne){
+	public function modifierCentre($idCentre, $RaisonSociale, $Add, $CodePostal, $Ville, $Tel){
 		$this->executerRequete('UPDATE centre SET CraisonSociale = ?, Cadresse = ?, CcodePostal = ?, Cville = ?, Ctelephone = ? WHERE Cagrement = ?', array($RaisonSociale, $Add, $CodePostal, $Ville, $Tel, $idCentre));
 	}
 
