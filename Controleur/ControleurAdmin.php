@@ -22,4 +22,11 @@ class ControleurAdmin extends ControleurSecurise
         $login = $this->requete->getSession()->getAttribut("login");
         $this->genererVue(array('nbVehicules' => $nbVehicules, 'nbEntretiens' => $nbEntretiens, 'login' => $login));
     }
+
+    public function entretiens()
+    {
+        $entretiens = $this->entretien->getAllEntretien();
+        $this->genererVue(array('entretiens' => $entretiens));
+
+    }
 }

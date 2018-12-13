@@ -28,4 +28,11 @@ class Entretien extends Modele
 		$date = date(DATE_W3C);
 		$this->executerRequete($requete, array($date, $technicien, $descriptif, $immat));
 	}
+
+	public function getAllEntretien()
+	{
+		$requete = 'select * from Entretien order by Edate';
+		$resultats = $this->executerRequete($requete);						
+		return $resultats;
+	}
 }
