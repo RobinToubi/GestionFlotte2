@@ -2,11 +2,13 @@
 
 require_once 'Framework/Controleur.php';
 require_once 'Modele/Vehicule.php';
+require_once 'Modele/Salarie.php' ;
+require_once 'Modele/Actualites.php' ;
 
 class ControleurActualites extends Controleur
 {
-    private $vehicule;
-    private $salarie;
+
+    private $actualite;
 
 	public function __construct()
 	{
@@ -17,8 +19,8 @@ class ControleurActualites extends Controleur
 	//Affiche la liste des nouveaux véhicules, salaries de la société
 	public function index()
 	{
-        $vehicules = $this->vehicules->getDVehicules();
-        $salaries = $this->salaries->getDSalarie();
+        $vehicule = $this->actualite->getDVehicules();
+        $salaries = $this->actualite->getDSalarie();
 		$this->genererVue(array('vehicules' => $vehicules, 'salaries' => $salaries));
 	}
 

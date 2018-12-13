@@ -12,11 +12,11 @@
 		    <form action="connexion/connecter" method='post'>
   <div class="form-group">
     <label for="exampleInputEmail1" class="text-uppercase">Mail</label>
-    <input type="email" class="form-control" placeholder="" name='login'>
+    <input type="email" class="form-control" placeholder="" name='mail'>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1" class="text-uppercase">Password</label>
-    <input type="password" class="form-control" placeholder="" name='mdp'>
+    <input type="password" class="form-control" placeholder="" name='password'>
   </div>
 
 

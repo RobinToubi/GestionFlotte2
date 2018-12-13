@@ -33,9 +33,14 @@ class ControleurConnexion extends Controleur
             else
                 $this->genererVue(array('msgErreur' => 'mail ou mot de passe incorrects'),"index");
         }
+<<<<<<< HEAD
         else
             //$this->genererVue(array('msgErreur' => 'mail et mot de passe non défini'),'index');
             throw new Exception("Action impossible : mail ou mot de passe non défini");
+=======
+            //$this->genererVue(array('msgErreur' => 'Login et mot de passe non défini'),'index');
+            throw new Exception("Action impossible : login ou mot de passe non défini");
+>>>>>>> 9ece0248acfa3b8db5d309a22a7db8256e4e2164
     }
 
     public function deconnecter()
