@@ -3,6 +3,6 @@
 <?php $this->banniere = 'Page inaccessible'; ?>
 
 <p>Une erreur est survenue : <?= $msgErreur ?></p>
-https://www.idgarages.com/fr-fr/prestations
+
 
 

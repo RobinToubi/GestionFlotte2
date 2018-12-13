@@ -9,7 +9,7 @@ abstract class ControleurSecurise extends Controleur
         //Permet de vérifier si les informations de l'utilisateur sont présents dans la session
         //Si oui, l'utilisateur est déjà authentifié : l'exécution de l'action continue normalement
         //Si non, l'utilisateur est renvoyé vers le contrôleur de connexion
-        if ($this->requete->getSession()->existeAttribut("idSalarie"))
+        if ($this->requete->getSession()->existeAttribut("login"))
         {
             parent::executerAction($action);
         }
