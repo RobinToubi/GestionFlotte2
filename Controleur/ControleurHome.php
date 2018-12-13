@@ -4,10 +4,21 @@ require_once 'Framework/Controleur.php';
 
 class ControleurHome extends Controleur
 {
-    public function index()
-    {
-      $this->genererVue();
-    }
-}
+  private $salarie;
 
+  public function __construct()
+  {
+      $this->salarie = new Salarie();
+
+  }
+
+  public function index()
+  {
+    $this->genererVue();
+  }
+
+  public function getAllSalaries(){
+      $this->$salarie = $salarie;
+  }
+}
 ?>
