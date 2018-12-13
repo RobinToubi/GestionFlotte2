@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="col-md-4 login-sec">
 		    <h2 class="text-center">Login Now</h2>
-		    <form action="connexion/connecter" method='post'>
+		    <form action="/GestionFlotte2/connexion/connecter" method='post'>
   <div class="form-group">
     <label for="exampleInputEmail1" class="text-uppercase">Mail</label>
     <input type="email" class="form-control" placeholder="" name='mail'>
