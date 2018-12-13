@@ -29,7 +29,17 @@ class ControleurConnexion extends Controleur
                 $salarie = $this->salarie->getSalarie($login, $mdp);
                 $this->requete->getSession()->setAttribut("idSalarie",$salarie['Sid']);
                 $this->requete->getSession()->setAttribut("login",$salarie['Smail']);
-                $this->rediriger("admin");
+                if ($salarie['Srole'] == '3')
+                {
+                  $this->rediriger("admin");
+                }
+                elseif ($salarie['Srole'] == '2')
+                {
+                  $this->rediriger("commercial");
+                } else {
+                  $this->rediriger("salarie");
+                }
+
             }
             else
                 $this->genererVue(array('msgErreur' => 'Login ou mot de passe incorrects'),"index");
