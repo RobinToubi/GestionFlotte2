@@ -1,7 +1,7 @@
 <?php
 
 require_once 'Modele/Centre.php';
-require_once 'Vue/Vue.php';
+require_once 'Vue/Centre.php';
 
 class ControleurCentre {
 
