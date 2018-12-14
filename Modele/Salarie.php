@@ -22,4 +22,16 @@ class Salarie extends Modele
         else
             throw new Exception("Aucun salarié ne correspond aux identifiants fournis");
     }
+
+    public function getAllSalaries()
+    {
+        $sql = "SELECT * FROM SALARIE";
+        $salarie = $this->executerRequete($sql,array());
+        if ($salarie->rowCount() >= 1)
+        {
+          return $salarie->fetchAll();
+        }
+        else
+            throw new Exception("Error Processing Request", 1);  
+    }
 }
